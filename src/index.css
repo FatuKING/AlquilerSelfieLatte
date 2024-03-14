@@ -23,7 +23,7 @@
   box-sizing: border-box;
 }
 
-body {
+#root {
   background: url("/public/fondoverde.png") center center;
   background-size: cover;
   display: flex;
