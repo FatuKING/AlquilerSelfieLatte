@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -23,16 +23,29 @@
   box-sizing: border-box;
 }
 
+body {
+  width: 100%;
+  height: 100vh;
+}
+
 #root {
+  position: relative;
   background: url("/public/fondoverde.png");
   background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 100px;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+}
+
+header{
+  height: 200px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
 }
 
 .large {
@@ -43,5 +56,9 @@
 @media (max-width: 640px) { 
   .large {
     width: 390px;
+  }
+
+  #root{
+    height: 1500px;
   }
  }

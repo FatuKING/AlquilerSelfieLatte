@@ -21,9 +21,9 @@ function App () {
   return (
     <>
       <header>
-        <h1 className='text-6xl font-bold'>Alquiler Selfie Latte - Cafe Martinez</h1>
+        <h1 className='text-2xl md:text-6xl font-bold'>Alquiler Selfie Latte</h1>
       </header>
-      <main className='flex flex-col md:flex-row gap-10'>
+      <main className='flex flex-col md:flex-row gap-10 h-auto'>
         {
           data.map((selfie, index) => {
             return (
