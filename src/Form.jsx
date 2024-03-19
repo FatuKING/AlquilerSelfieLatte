@@ -1,4 +1,3 @@
-import React from 'react'
 export function Form () {
   return (
     <> <h1>Formulario de alquiler</h1>
