@@ -80,6 +80,14 @@ header{
   grid-gap: 10px;
 }
 
+@media (max-width: 600px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
 @media (max-width: 640px) { 
   .large {
     width: 390px;
