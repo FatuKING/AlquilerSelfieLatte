@@ -67,8 +67,9 @@ header{
 .form{
   display: flex;
   flex-direction: column;
-  height: 400px;
-  width: 370px;
+  gap: 10px;
+  height: 540px;
+  width: 380px;
   background-color: #242424;
   padding: 10px;
 }

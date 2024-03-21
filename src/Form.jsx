@@ -3,36 +3,36 @@ export function Form () {
     <>
       <section className='formBackground'>
         <form className='form'>
-          <div>
-            <h1>Formulario de alquiler</h1>
+          <div className='flex justify-between'>
+            <h1 className='text-2xl'>Formulario de alquiler</h1>
 
-            <button className=''>X</button>
+            <button className='text-2xl'>X</button>
           </div>
           <label>
-            Nombre de sucursal:
-            <input type='text' name='nombreSucursal' />
+            <span>Nombre de sucursal</span>
+            <input className='p-1 h-10 text-black w-full' type='text' name='nombreSucursal' placeholder='Nombre de la sucursal' />
           </label>
           <label>
-            Nombre de responsable:
-            <input type='text' name='nombreResponsable' />
+            <span>Nombre de responsable</span>
+            <input className='p-1 h-10 text-black w-full' type='text' name='nombreResponsable' placeholder='Nombre de responsable' />
           </label>
           <label>
-            Fecha:
-            <input type='date' name='fecha' />
+            <span className='inline-block w-full'>Fecha de inicio </span>
+            <input className='p-1 h-10 text-black w-full' type='date' name='fecha' />
           </label>
           <label>
-            Email:
-            <input type='email' name='email' />
+            <span className='inline-block w-full'>Email del local </span>
+            <input className='p-1 h-10 text-black w-full' type='email' name='email' />
           </label>
           <label>
-            Teléfono celular:
-            <input type='tel' name='numeroCelular' />
+            <span className='inline-block w-full'>Celular</span>
+            <input className='p-1 h-10 text-black w-full' type='tel' name='numeroCelular' placeholder='Numero de Celular' />
           </label>
           <label>
-            Adjuntar comodato:
-            <input type='file' name='comodato' />
+            Adjuntar comodato
+            <input className='' type='file' name='comodato' />
           </label>
-          <input type='submit' value='Enviar' />
+          <input className='' type='submit' value='Enviar' />
         </form>
       </section>
     </>
