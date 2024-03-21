@@ -10,7 +10,7 @@ export default function Latte ({ name, img, status, priceWeek, priceMonth, codIn
 
   return (
     <>
-      <section className='flex flex-col justify-center items-center gap-8 h-96 large bg-slate-50 rounded-md'>
+      <section className='flex flex-col justify-center items-center gap-8 large bg-slate-50 rounded-md'>
         <h1 className='text-2xl text-black font-bold'>{name} </h1>
         <div className='flex justify-center items-center gap-4'>
           <figure className='w-52 h-52 lg:h-64 lg:w-64'>
