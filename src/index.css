@@ -75,8 +75,7 @@ header{
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, minmax(280px, 640px));
-  grid-template-rows: repeat(1, minmax(290px, 440px));
+  grid-template-columns: repeat(3, minmax(280px, 500px));
   grid-gap: 10px;
 }
 
