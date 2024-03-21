@@ -49,7 +49,6 @@ header{
 }
 
 .large {
-  width: 500px;
   background-image: url(/public/fondoMarron.png);
 }
 
@@ -81,10 +80,6 @@ header{
 }
 
 @media (max-width: 640px) { 
-  .large {
-    width: 390px;
-  }
-
   #root{
     height: 1500px;
   }
