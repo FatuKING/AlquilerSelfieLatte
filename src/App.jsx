@@ -23,14 +23,14 @@ function App () {
       <div>
         <h1 className='text-2xl md:text-6xl font-bold'>Alquiler Selfie Latte</h1>
       </div>
-      <main className='flex flex-col md:flex-row gap-10 h-auto'>
+      <main className='grid grid-cols-1 md:grid-cols-3 gap-10 h-auto'>
         {
-          data.map((selfie, index) => {
-            return (
-              <Latte key={index} codInt={selfie.codInt} codOn={selfie.codOn} name={selfie.name} priceWeek={selfie.priceWeek} priceMonth={selfie.priceMonth} img={selfie.img} status={selfie.status} />
-            )
-          })
-        }
+    data.map((selfie, index) => {
+      return (
+        <Latte key={index} codInt={selfie.codInt} codOn={selfie.codOn} name={selfie.name} priceWeek={selfie.priceWeek} priceMonth={selfie.priceMonth} img={selfie.img} status={selfie.status} />
+      )
+    })
+  }
       </main>
     </>
   )
