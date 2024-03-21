@@ -74,6 +74,12 @@ header{
   padding: 10px;
 }
 
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
 @media (max-width: 640px) { 
   .large {
     width: 390px;
