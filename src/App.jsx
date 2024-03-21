@@ -23,7 +23,7 @@ function App () {
       <div>
         <h1 className='text-2xl md:text-6xl font-bold'>Alquiler Selfie Latte</h1>
       </div>
-      <main className='grid grid-cols-1 md:grid-cols-3 gap-10 h-auto'>
+      <main className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 h-auto'>
         {
     data.map((selfie, index) => {
       return (
