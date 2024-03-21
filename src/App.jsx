@@ -25,12 +25,12 @@ function App () {
       </div>
       <main className='wrapper'>
         {
-    data.map((selfie, index) => {
-      return (
-        <Latte key={index} codInt={selfie.codInt} codOn={selfie.codOn} name={selfie.name} priceWeek={selfie.priceWeek} priceMonth={selfie.priceMonth} img={selfie.img} status={selfie.status} />
-      )
-    })
-  }
+          data.map((selfie, index) => {
+            return (
+              <Latte key={index} codInt={selfie.codInt} codOn={selfie.codOn} name={selfie.name} priceWeek={selfie.priceWeek} priceMonth={selfie.priceMonth} img={selfie.img} status={selfie.status} />
+            )
+          })
+        }
       </main>
     </>
   )

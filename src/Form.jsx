@@ -1,12 +1,16 @@
 export function Form () {
+  const closeSubmit = () => {
+
+  }
+
   return (
     <>
       <section className='formBackground'>
-        <form className='form' action='https://formsubmit.co/hrodriguez@cafemartinez.com.ar' method='POST'>
+        <form className='form' action='mailto:hrodriguez@cafemartinez.com.ar' method='POST'>
           <div className='flex justify-between'>
             <h1 className='text-2xl'>Formulario de alquiler</h1>
 
-            <button className='text-2xl'>X</button>
+            <button className='text-2xl' onClick={closeSubmit}>X</button>
           </div>
           <label>
             <span className='inline-block w-full text-lg'>Nombre de sucursal</span>
