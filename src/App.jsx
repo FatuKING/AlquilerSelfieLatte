@@ -20,9 +20,9 @@ function App () {
 
   return (
     <>
-      <header>
+      <div>
         <h1 className='text-2xl md:text-6xl font-bold'>Alquiler Selfie Latte</h1>
-      </header>
+      </div>
       <main className='flex flex-col md:flex-row gap-10 h-auto'>
         {
           data.map((selfie, index) => {

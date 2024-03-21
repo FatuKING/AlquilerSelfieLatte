@@ -53,6 +53,26 @@ header{
   background-image: url(/public/fondoMarron.png);
 }
 
+.formBackground {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 370px;
+  background-color: #242424;
+  padding: 10px;
+}
+
 @media (max-width: 640px) { 
   .large {
     width: 390px;
