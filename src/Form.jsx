@@ -30,6 +30,11 @@ export function Form ({ onClose }) {
               <input className='p-1 h-10 text-black w-full' type='date' name='fecha' />
             </label>
             <label>
+              <span className='inline-block w-full text-lg'>Fecha de entrega </span>
+              <input className='p-1 h-10 text-black w-full' type='date' name='fecha' />
+            </label>
+            <a href='public/Comodato.docx' download className='text-sm 2xl:text-lg rounded bg-black p-2 1xl:p-2 w-52'>Descargar Comodato</a>
+            <label>
               <span className='inline-block w-full text-lg'>Adjuntar Comodato</span>
               <input className='' type='file' name='comodato' />
             </label>
