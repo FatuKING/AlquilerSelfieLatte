@@ -21,9 +21,8 @@ function App () {
   return (
     <>
       <header>
-        <h1 className='text-black text-3xl md:text-4xl font-bold '>Alquiler Selfie Latte</h1>
-        <figure className='h-48 w-48'>
-          <img className='w-full h-full' src='/logoMartinez.png' alt='' />
+        <figure className='h-40 w-54'>
+          <img className='w-full h-full' src='/logo200b.png' alt='' />
         </figure>
       </header>
       <main className='wrapper'>

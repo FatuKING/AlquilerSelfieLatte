@@ -8,6 +8,10 @@ export default function Latte ({ name, img, status, priceWeek, priceMonth, codIn
     setForm(true)
   }
 
+  const onClose = () => {
+    setForm(false)
+  }
+
   return (
     <>
       <section className='flex flex-col justify-center items-center gap-4 large p-2 rounded-md'>
@@ -30,7 +34,7 @@ export default function Latte ({ name, img, status, priceWeek, priceMonth, codIn
       </section>
 
       {
-        form ? <Form /> : null
+        form ? <Form onClose={onClose} /> : null
       }
     </>
   )
