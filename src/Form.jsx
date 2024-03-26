@@ -6,12 +6,12 @@ export function Form () {
   return (
     <>
       <section className='formBackground'>
-        <form className='form' action='mailto:hrodriguez@cafemartinez.com.ar' method='POST'>
-          <div className='flex justify-between'>
-            <h1 className='text-2xl'>Formulario de alquiler</h1>
+        <div className='flex justify-between'>
+          <h1 className='text-2xl'>Formulario de alquiler</h1>
 
-            <button className='text-2xl' onClick={closeSubmit}>X</button>
-          </div>
+          <button className='text-2xl' onClick={closeSubmit}>X</button>
+        </div>
+        <form className='form' action='mailto:hrodriguez@cafemartinez.com.ar' method='POST'>
           <label>
             <span className='inline-block w-full text-lg'>Nombre de sucursal</span>
             <input className='p-1 h-10 text-black w-full' type='text' name='nombreSucursal' placeholder='Nombre de la sucursal' />

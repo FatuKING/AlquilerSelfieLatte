@@ -20,9 +20,12 @@ function App () {
 
   return (
     <>
-      <div>
-        <h1 className='text-2xl md:text-6xl font-bold'>Alquiler Selfie Latte</h1>
-      </div>
+      <header>
+        <h1 className='text-black text-3xl md:text-4xl font-bold '>Alquiler Selfie Latte</h1>
+        <figure className='h-48 w-48'>
+          <img className='w-full h-full' src='/logoMartinez.png' alt='' />
+        </figure>
+      </header>
       <main className='wrapper'>
         {
           data.map((selfie, index) => {
