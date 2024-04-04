@@ -20,9 +20,9 @@ function App () {
 
   return (
     <>
-      <header>
-        <figure className='h-40 w-54'>
-          <img className='w-full h-full' src='/logo200b.png' alt='' />
+      <header className='h-auto p-5 xl:p-10'>
+        <figure className='lg:h-40 lg:w-54'>
+          <img className='w-full h-full' src='/logoMartinez.png' alt='Logo Cafe Martinez' />
         </figure>
       </header>
       <main className='wrapper'>

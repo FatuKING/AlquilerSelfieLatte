@@ -29,7 +29,7 @@ body {
 }
 
 #root {
-  background: url("/public/fondoverde.png");
+  background: url("/fondoverde.png");
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -49,7 +49,7 @@ header{
 }
 
 .large {
-  background-image: url(/public/fondoMarron.png);
+  background-image: url(/fondoMarron.png);
 }
 
 .formBackground {
@@ -69,7 +69,8 @@ header{
   gap: 10px;
   height: auto;
   width: 540px;
-  background-color: #242424;
+  background-image: url(/public/fondoTazacm.png);
+  background-size: cover;
   padding: 10px;
 }
 
@@ -79,7 +80,11 @@ header{
   gap: 15px;
 }
 
-@media (max-width: 1400px) { 
+@media (max-width: 1366px) { 
+  #root{
+    height: 100vh;
+  }
+
   .wrapper {
     grid-template-columns: repeat(3, 400px);
   }

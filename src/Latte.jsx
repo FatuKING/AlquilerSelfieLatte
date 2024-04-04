@@ -28,13 +28,13 @@ export default function Latte ({ name, img, status, priceWeek, priceMonth, codIn
             <span className='text-black text-sm 2xl:text-lg font-medium'>Precio por mes: {priceMonth}</span>
             <span className='text-black text-sm 2xl:text-lg font-medium'>Estado: {status}</span>
 
-            <button className='inline-block text-sm 2xl:text-lg rounded bg-black p-2 2xl:p-3 w-40 uppercase' onClick={handleClick}>Alquilar</button>
+            <button className='inline-block text-sm 2xl:text-lg rounded bg-black p-2 w-40 uppercase active:scale-95' onClick={handleClick}>Alquilar</button>
           </div>
         </div>
       </section>
 
       {
-        form ? <Form onClose={onClose} /> : null
+        form ? <Form onClose={onClose} priceMonth={priceMonth} priceWeek={priceWeek} /> : null
       }
     </>
   )

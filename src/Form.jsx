@@ -1,8 +1,8 @@
-export function Form ({ onClose }) {
+export function Form ({ onClose, priceWeek, priceMonth }) {
   return (
     <>
       <section className='formBackground'>
-        <article className='form'>
+        <article className='form rounded-xl'>
           <div className='flex justify-between'>
             <h1 className='text-2xl'>Formulario de alquiler</h1>
 
@@ -12,39 +12,46 @@ export function Form ({ onClose }) {
             </button>
           </div>
           <form className='flex flex-col gap-2' action='mailto:hrodriguez@cafemartinez.com.ar' method='POST'>
-            <label>
+            <label className='flex flex-col gap-1'>
               <span className='inline-block w-full text-lg'>Nombre de sucursal</span>
-              <input className='p-1 h-10 text-black w-full' type='text' name='nombreSucursal' placeholder='Nombre de la sucursal' />
+              <input className='p-1 h-10 w-full bg-transparent border focus:outline-none focus:border-2' type='text' name='nombreSucursal' placeholder='Nombre de la sucursal' />
             </label>
-            <label>
-              <span className='inline-block w-full text-lg'>Nombre de responsable</span>
-              <input className='p-1 h-10 text-black w-full' type='text' name='nombreResponsable' placeholder='Nombre completo' />
+            <label className='flex flex-col gap-1'>
+              <span className='inline-block w-full text-lg'>Nombre del responsable</span>
+              <input className='p-1 h-10 w-full bg-transparent border focus:outline-none focus:border-2' type='text' name='nombreResponsable' placeholder='Nombre completo' />
             </label>
-            <label>
+            <label className='flex flex-col gap-1'>
               <span className='inline-block w-full text-lg'>Email del local </span>
-              <input className='p-1 h-10 text-black w-full' type='email' name='email' placeholder='sumail@cafemartinez.com.ar' />
+              <input className='p-1 h-10 w-full bg-transparent border focus:outline-none focus:border-2' type='email' name='email' placeholder='mail@cafemartinez.com.ar' />
             </label>
-            <label>
+            <label className='flex flex-col gap-1'>
               <span className='inline-block w-full text-lg'>Celular</span>
-              <input className='p-1 h-10 text-black w-full' type='tel' name='numeroCelular' placeholder='Numero de Celular' />
+              <input className='p-1 h-10 w-full bg-transparent border focus:outline-none focus:border-2' type='tel' name='numeroCelular' placeholder='Numero de Celular' />
             </label>
-            <label>
-              <span className='inline-block w-full text-lg'>Fecha de alquiler</span>
-              <div className='flex gap-4'>
-                <input className='p-1 h-10 text-black w-1/2' type='date' name='fechaInicio' />
-                <input className='p-1 h-10 text-black w-1/2' type='date' name='fechaFinalizacion' />
-              </div>
+            <label className='flex flex-col gap-1'>
+              <span className='inline-block w-full text-lg'>Periodo de alquiler</span>
+              <select className='w-1/2 bg-transparent border p-1 focus:outline-none focus:border-2'>
+                <option className='bg-transparent text-black' value='week1' selected>Una Semana - {priceWeek}</option>
+                <option className='bg-transparent text-black' value='week1'>Dos Semanas - {priceWeek}</option>
+                <option className='bg-transparent text-black' value='week1'>Tres Semanas - {priceWeek}</option>
+                <option className='bg-transparent text-black' value='week1'>Un Mes - {priceMonth}</option>
+              </select>
             </label>
-            <a href='public/Comodato.docx' download className='flex gap-2 text-sm 2xl:text-lg rounded bg-black p-2 w-36'>Comodato <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' class='bi bi-download' viewBox='0 0 16 16'>
-              <path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5' />
-              <path d='M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z' />
-            </svg>
-            </a>
-            <label>
+            <label className='flex flex-col gap-1'>
+              <span className='inline-block w-full text-lg'>Descargar Comodato</span>
+              <a href='public/Comodato.docx' download className='flex gap-2 text-sm 2xl:text-base border p-1 pl-2 pr-2 w-32 rounded active:scale-95'>Comodato <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-download' viewBox='0 0 16 16'>
+                <path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5' />
+                <path d='M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z' />
+              </svg>
+              </a>
+            </label>
+            <label className='flex flex-col gap-1'>
               <span className='inline-block w-full text-lg'>Adjuntar Comodato</span>
-              <input className='' type='file' name='comodato' />
+              <input className='file:bg-black file:text-violet-700 file:rounded-full file:border-none file:p-1 file:pl-3 file:pr-3' type='file' name='comodato' />
             </label>
-            <input className='' type='submit' value='Enviar' />
+            <div className='flex justify-center'>
+              <input className='border w-24 rounded active:scale-95' type='submit' value='Enviar' />
+            </div>
           </form>
         </article>
       </section>
