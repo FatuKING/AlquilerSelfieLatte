@@ -5,11 +5,23 @@ export default function Latte ({ name, img, status, priceWeek, priceMonth, codIn
   const [form, setForm] = useState(false)
 
   const handleClick = () => {
-    setForm(true)
+    if (status === 'Disponible') { setForm(true) }
   }
 
   const onClose = () => {
     setForm(false)
+  }
+
+  const styleStatus = (status) => {
+    let color
+    if (status === 'Disponible') {
+      color = 'text-green-900'
+    } else if (status === 'Reservada') {
+      color = 'text-orange-900'
+    } else {
+      color = 'text-red-900'
+    }
+    return color
   }
 
   return (
@@ -26,7 +38,7 @@ export default function Latte ({ name, img, status, priceWeek, priceMonth, codIn
             <span className='text-black text-sm 2xl:text-lg font-medium'>Cod Online: {codOn}</span>
             <span className='text-black text-sm 2xl:text-lg font-medium'>Precio por semana: {priceWeek}</span>
             <span className='text-black text-sm 2xl:text-lg font-medium'>Precio por mes: {priceMonth}</span>
-            <span className='text-black text-sm 2xl:text-lg font-medium'>Estado: {status}</span>
+            <span className='text-black text-sm 2xl:text-lg font-medium'>Estado: <strong className={styleStatus(status)}>{status}</strong></span>
 
             <button className='inline-block text-sm 2xl:text-lg rounded bg-black p-2 w-40 uppercase active:scale-95' onClick={handleClick}>Alquilar</button>
           </div>
