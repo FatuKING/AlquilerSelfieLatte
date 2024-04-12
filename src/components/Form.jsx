@@ -1,11 +1,7 @@
+import { useForm } from '../hook/useForm'
+
 export function Form ({ onClose, priceWeek, priceMonth }) {
-  const priceTwoWeek = () => {
-    const value = priceWeek.replace(/[$.,]/g, '').slice(0, -2)
-
-    const price = value * 2
-
-    return price.toLocaleString().replace(',', '.')
-  }
+  const { mensaje, priceTwoWeek } = useForm({ priceWeek })
 
   return (
     <>
@@ -19,26 +15,30 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
             </svg>
             </button>
           </div>
-          <form className='flex flex-col gap-2' action='mailto:hrodriguez@cafemartinez.com.ar' method='POST'>
+          <form className='flex flex-col gap-2' action='https://formsubmit.co/fcozzani@cafemartinez.com.ar' method='POST'>
+            <input type='hidden' name='_subject' value='Nuevo Alquiler Selfie Latte' />
+            <input type='hidden' name='_captcha' value='false' />
+            <input type='hidden' name='_next' value='#' />
+
             <label className='flex flex-col gap-1'>
               <span className='inline-block w-full'>Nombre de sucursal</span>
-              <input className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none focus:border-2' type='text' name='nombreSucursal' required placeholder='Nombre de la sucursal' />
+              <input className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none focus:border-2' type='text' name='Sucursal' required placeholder='Nombre de la sucursal' />
             </label>
             <label className='flex flex-col gap-1'>
               <span className='inline-block w-full'>Nombre completo</span>
-              <input className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none focus:border-2' type='text' name='nombreResponsable' placeholder='Nombre del reponsable' />
+              <input className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none focus:border-2' type='text' name='Responsable' placeholder='Nombre del reponsable' />
             </label>
             <label className='flex flex-col gap-1'>
               <span className='inline-block w-full'>Dirreción de correo</span>
-              <input className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none focus:border-2' type='email' name='email' placeholder='sucursal@cafemartinez.com.ar' />
+              <input className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none focus:border-2' type='email' name='Dirrecion de correo' placeholder='sucursal@cafemartinez.com.ar' />
             </label>
             <label className='flex flex-col gap-1'>
               <span className='inline-block w-full'>Numero de contacto</span>
-              <input className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none focus:border-2' type='tel' name='numeroCelular' placeholder='Ej: 1178963545' />
+              <input className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none focus:border-2' type='tel' name='Telefono' placeholder='Ej: 1178963545' />
             </label>
             <label className='flex items-center pt-2'>
               <span className='inline-block w-full'>Periodo de alquiler</span>
-              <select className='bg-transparent border p-1 focus:outline-none focus:border-2'>
+              <select className='bg-transparent border p-1 focus:outline-none focus:border-2' type='select' name='Tiempo de alquiler'>
                 <option className='bg-transparent text-black' value='week1' selected>Una Semana - {priceWeek}</option>
                 <option className='bg-transparent text-black' value='week1'>Dos Semanas - ${priceTwoWeek()},00</option>
                 <option className='bg-transparent text-black' value='week1'>Tres Semanas - {priceMonth}</option>
@@ -55,7 +55,7 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
             </label>
             <label className='flex items-center pt-2'>
               <span className='inline-block w-full'>Adjuntar Comodato</span>
-              <input className='file:w-full file:bg-transparent file:text-white file:border file:border-white file:rounded-full' type='file' name='comodato' />
+              <input className='file:w-full file:bg-transparent file:text-white file:border file:border-white file:rounded-full' type='file' name='Comodato' />
             </label>
             <div className='flex justify-end pt-2'>
               <input className='border w-24 rounded-full active:scale-95' type='submit' value='Enviar' />

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import Latte from './Latte.jsx'
-import { api } from './api.js'
+import Latte from './components/Latte.jsx'
+import { api } from './Logic/api.js'
 
 function App () {
   const [data, setData] = useState([])
