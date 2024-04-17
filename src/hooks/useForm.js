@@ -39,22 +39,12 @@ export function useForm ({ priceWeek }) {
 
     setSucursal(query)
 
-    if (query.length < 4) {
-      setErrorSucursal('Nombre demasiado corto')
-      return
-    }
-
-    if (!query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@]+$/g)) {
+    if (!query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@[\]]+$/g)) { // devuelve True si tiene algun simbolo
       setErrorSucursal('El nombre no puede contener simbolos')
       return
     }
 
-    if (!query.match(/^[A-Za-z\s]+$/)) {
-      setErrorSucursal(null)
-      return
-    }
-
-    if (query.length > 4) {
+    if (query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@[\]]+$/g)) {
       setErrorSucursal(null)
     }
   }
@@ -63,11 +53,6 @@ export function useForm ({ priceWeek }) {
     const query = e.target.value
 
     setNombreCompleto(query)
-
-    if (query.length < 4) {
-      setErrorName('Nombre demasiado corto')
-      return
-    }
 
     if (!query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@]+$/g)) {
       setErrorName('El nombre no puede contener simbolos')
@@ -86,11 +71,6 @@ export function useForm ({ priceWeek }) {
 
     if (query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@]+$/g)) {
       setErrorName(null)
-      return
-    }
-
-    if (query.length > 4) {
-      setErrorName(null)
     }
   }
 
@@ -99,32 +79,12 @@ export function useForm ({ priceWeek }) {
 
     setCorreo(query)
 
-    if (query.length < 4) {
-      setErrorMail('Nombre demasiado corto')
+    if (!query.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
+      setErrorMail('Dirrecion de correo no valida')
       return
     }
 
-    if (!query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@]+$/g)) {
-      setErrorMail('El nombre no puede contener simbolos')
-      return
-    }
-
-    if (!query.match(/^\D+$/)) {
-      setErrorMail('El nombre no puede contener numeros')
-      return
-    }
-
-    if (query.match(/^\D+$/)) {
-      setErrorMail(null)
-      return
-    }
-
-    if (query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@]+$/g)) {
-      setErrorMail(null)
-      return
-    }
-
-    if (query.length > 4) {
+    if (query.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
       setErrorMail(null)
     }
   }
