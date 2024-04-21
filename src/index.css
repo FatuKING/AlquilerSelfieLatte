@@ -86,13 +86,29 @@ header{
   }
 
   .wrapper {
-    grid-template-columns: repeat(3, 400px);
+    grid-template-columns: repeat(3, 390px);
   }
  } 
 
+
+@media (max-width: 1024px) { 
+  #root{
+    height: 1300px;
+  }
+
+  .form {
+    width: 480px;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(1, 480px);
+  }
+ }
+
+
 @media (max-width: 640px) { 
   #root{
-    height: 1600px;
+    height: 1300px;
   }
 
   .form {

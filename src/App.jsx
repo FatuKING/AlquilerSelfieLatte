@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Latte from './components/Latte.jsx'
 import { api } from './Logic/api.js'
 
-function App () {
+export default function App () {
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -37,5 +37,3 @@ function App () {
     </>
   )
 }
-
-export default App

@@ -1,17 +1,15 @@
 import { useState } from 'react'
 
 export function useForm ({ priceWeek }) {
-  const [sucursal, setSucursal] = useState('')
-  const [nombreCompleto, setNombreCompleto] = useState('')
-  const [correo, setCorreo] = useState('')
-  const [telefono, setTelefono] = useState('')
-  const [periodoAlquiler, setPeriodoAlquiler] = useState('')
-  const [comodato, setComodato] = useState(null)
+  const [branch, setBranch] = useState('')
+  const [fullName, setFullName] = useState('')
+  const [mail, setMail] = useState('')
+  const [phone, setPhone] = useState('')
 
-  const [errorSucursal, setErrorSucursal] = useState('')
-  const [errorName, setErrorName] = useState('')
+  const [errorBranch, setErrorBranch] = useState('')
+  const [errorFullName, setErrorFullName] = useState('')
   const [errorMail, setErrorMail] = useState('')
-  const [errorTel, setErrorTel] = useState('')
+  const [errorPhone, setErrorPhone] = useState('')
 
   const priceTwoWeek = () => {
     const value = priceWeek.replace(/[$.,]/g, '').slice(0, -2)
@@ -24,60 +22,81 @@ export function useForm ({ priceWeek }) {
   const handleSumit = (e) => {
     e.preventDefault()
     const form = new window.FormData(e.target)
-    setSucursal(form.get('Sucursal'))
-    setNombreCompleto(form.get('NombreCompleto'))
-    setCorreo(form.get('DirrecionDecorreo'))
-    setTelefono(form.get('Telefono'))
-    setPeriodoAlquiler(form.get('TiempoDealquiler'))
-    setComodato(form.get('Comodato'))
 
-    console.log({ sucursal, nombreCompleto, correo, telefono, periodoAlquiler, comodato })
+    const data = {
+      nombreSucursal: form.get('Sucursal'),
+      nombre: form.get('NombreCompleto'),
+      mail: form.get('DirrecionDecorreo'),
+      tel: form.get('Telefono'),
+      tiempoAlquiler: form.get('TiempoDealquiler')
+    }
+
+    console.log(data)
   }
 
   const validateBranch = (e) => {
     const query = e.target.value
 
-    setSucursal(query)
+    setBranch(query)
+
+    if (query.match(/^$/)) {
+      setErrorBranch(null)
+      return
+    }
 
     if (!query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@[\]]+$/g)) { // devuelve True si tiene algun simbolo
-      setErrorSucursal('El nombre no puede contener simbolos')
+      setErrorBranch('El nombre no puede contener simbolos')
       return
     }
 
     if (query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@[\]]+$/g)) {
-      setErrorSucursal(null)
+      setErrorBranch(null)
+    }
+
+    if (query.match(/^$/)) {
+      setErrorBranch(null)
     }
   }
 
   const validateName = (e) => {
     const query = e.target.value
 
-    setNombreCompleto(query)
+    setFullName(query)
+
+    if (query.match(/^$/)) {
+      setErrorFullName(null)
+      return
+    }
 
     if (!query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@]+$/g)) {
-      setErrorName('El nombre no puede contener simbolos')
+      setErrorFullName('El nombre no puede contener simbolos')
       return
     }
 
     if (!query.match(/^\D+$/)) {
-      setErrorName('El nombre no puede contener numeros')
+      setErrorFullName('El nombre no puede contener numeros')
       return
     }
 
     if (query.match(/^\D+$/)) {
-      setErrorName(null)
+      setErrorFullName(null)
       return
     }
 
     if (query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@]+$/g)) {
-      setErrorName(null)
+      setErrorFullName(null)
     }
   }
 
   const validateMail = (e) => {
     const query = e.target.value
 
-    setCorreo(query)
+    setMail(query)
+
+    if (query.match(/^$/)) {
+      setErrorMail(null)
+      return
+    }
 
     if (!query.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
       setErrorMail('Dirrecion de correo no valida')
@@ -92,27 +111,32 @@ export function useForm ({ priceWeek }) {
   const validateTel = (e) => {
     const query = e.target.value
 
-    setTelefono(query)
+    setPhone(query)
+
+    if (query.match(/^$/)) {
+      setErrorPhone(null)
+      return
+    }
 
     if (!query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@[\]]+$/g)) { // devuelve True si tiene algun simbolo
-      setErrorTel('El nombre no puede contener simbolos')
+      setErrorPhone('El nombre no puede contener simbolos')
       return
     }
 
     if (query.match(/[a-zA-Z]/)) { // devuelve true si tiene alguna letra o cualquier posicion
-      setErrorTel('El nombre no puede contener letras')
+      setErrorPhone('El nombre no puede contener letras')
       return
     }
 
     if (!query.match(/[a-zA-Z]/)) {
-      setErrorTel(null)
+      setErrorPhone(null)
       return
     }
 
     if (query.match(/^[^{}/><?'":;+=\-_)(*&^%$#!@]+$/g)) {
-      setErrorTel(null)
+      setErrorPhone(null)
     }
   }
 
-  return { sucursal, nombreCompleto, correo, telefono, periodoAlquiler, comodato, errorSucursal, errorName, errorMail, errorTel, priceTwoWeek, handleSumit, validateBranch, validateName, validateMail, validateTel }
+  return { branch, fullName, mail, phone, errorBranch, errorFullName, errorMail, errorPhone, priceTwoWeek, handleSumit, validateBranch, validateName, validateMail, validateTel }
 }

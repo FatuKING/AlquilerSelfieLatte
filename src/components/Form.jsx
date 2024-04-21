@@ -1,7 +1,7 @@
 import { useForm } from '../hooks/useForm'
 
 export function Form ({ onClose, priceWeek, priceMonth }) {
-  const { sucursal, nombreCompleto, correo, telefono, errorSucursal, errorName, errorMail, errorTel, priceTwoWeek, handleSumit, validateBranch, validateName, validateMail, validateTel } = useForm({ priceWeek })
+  const { branch, fullName, mail, phone, errorBranch, errorFullName, errorMail, errorPhone, priceTwoWeek, handleSumit, validateBranch, validateName, validateMail, validateTel } = useForm({ priceWeek })
 
   return (
     <>
@@ -20,24 +20,24 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
               <span className='inline-block w-full'>Nombre de sucursal</span>
               <input
                 onChange={validateBranch}
-                value={sucursal}
+                value={branch}
                 className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none'
-                style={{ borderColor: errorSucursal ? 'red' : 'white' }}
+                style={{ borderColor: errorBranch ? 'red' : 'white' }}
                 autoComplete='off'
                 type='text'
                 name='Sucursal'
                 placeholder='Ej: Talcahuano'
                 required
               />
-              {errorSucursal && <p className='text-red-700 text-xs font-semibold'>{errorSucursal}</p>}
+              {errorBranch && <p className='text-red-700 text-xs font-semibold'>{errorBranch}</p>}
             </label>
             <label className='flex flex-col gap-1'>
               <span className='inline-block w-full'>Nombre completo</span>
               <input
                 onChange={validateName}
-                value={nombreCompleto}
+                value={fullName}
                 className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none'
-                style={{ borderColor: errorName ? 'red' : 'white' }}
+                style={{ borderColor: errorFullName ? 'red' : 'white' }}
                 autoComplete='off'
                 type='text'
                 name='NombreCompleto'
@@ -45,13 +45,13 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
                 minLength={7}
                 required
               />
-              {errorName && <p className='text-red-700 text-xs font-semibold'>{errorName}</p>}
+              {errorFullName && <p className='text-red-700 text-xs font-semibold'>{errorFullName}</p>}
             </label>
             <label className='flex flex-col gap-1'>
               <span className='inline-block w-full'>Dirreción de correo</span>
               <input
                 onChange={validateMail}
-                value={correo}
+                value={mail}
                 className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none'
                 style={{ borderColor: errorMail ? 'red' : 'white' }}
                 autoComplete='off'
@@ -66,9 +66,9 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
               <span className='inline-block w-full'>Numero de contacto</span>
               <input
                 onChange={validateTel}
-                value={telefono}
+                value={phone}
                 className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none'
-                style={{ borderColor: errorTel ? 'red' : 'white' }}
+                style={{ borderColor: errorPhone ? 'red' : 'white' }}
                 autoComplete='off'
                 minLength={10}
                 maxLength={11}
@@ -77,7 +77,7 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
                 placeholder='Ej: 1178963545'
                 required
               />
-              {errorTel && <p className='text-red-700 text-xs font-semibold'>{errorTel}</p>}
+              {errorPhone && <p className='text-red-700 text-xs font-semibold'>{errorPhone}</p>}
             </label>
             <label className='flex items-center pt-2'>
               <span className='inline-block w-full'>Periodo de alquiler</span>
