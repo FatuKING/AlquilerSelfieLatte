@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { endpointPostSheet } from '../Logic/endpointPostSheet'
 
 export function useForm ({ priceWeek }) {
   const [branch, setBranch] = useState('')
@@ -23,7 +24,7 @@ export function useForm ({ priceWeek }) {
     e.preventDefault()
     const form = new window.FormData(e.target)
 
-    const data = {
+    const dataSubmit = {
       nombreSucursal: form.get('Sucursal'),
       nombre: form.get('NombreCompleto'),
       mail: form.get('DirrecionDecorreo'),
@@ -31,7 +32,7 @@ export function useForm ({ priceWeek }) {
       tiempoAlquiler: form.get('TiempoDealquiler')
     }
 
-    console.log(data)
+    endpointPostSheet(dataSubmit)
   }
 
   const validateBranch = (e) => {
