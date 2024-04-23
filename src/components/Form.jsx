@@ -1,7 +1,7 @@
 import { useForm } from '../hooks/useForm'
 
 export function Form ({ onClose, priceWeek, priceMonth }) {
-  const { branch, fullName, mail, phone, errorBranch, errorFullName, errorMail, errorPhone, priceTwoWeek, handleSumit, validateBranch, validateName, validateMail, validateTel } = useForm({ priceWeek })
+  const { branch, fullName, mail, phone, errorBranch, errorFullName, errorMail, errorPhone, priceTwoWeek, handleSumit, validateBranch, validateName, validateMail, validateTel } = useForm({ priceWeek, onClose })
 
   return (
     <>

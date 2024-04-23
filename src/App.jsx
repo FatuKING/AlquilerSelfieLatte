@@ -20,9 +20,9 @@ export default function App () {
 
   return (
     <>
-      <header className='h-auto p-5 xl:p-10'>
-        <figure className='lg:h-40 lg:w-54'>
-          <img className='w-full h-full' src='/logoMartinez.png' alt='Logo Cafe Martinez' />
+      <header className='h-auto p-10'>
+        <figure className='imgSize'>
+          <img className='w-full h-full aspect-auto' src='/logoMartinez.png' alt='Logo Cafe Martinez' />
         </figure>
       </header>
       <main className='wrapper'>

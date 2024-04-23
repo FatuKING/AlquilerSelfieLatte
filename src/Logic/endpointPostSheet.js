@@ -4,7 +4,8 @@ export function endpointPostSheet (dataSubmit) {
     'Nombre Completo': dataSubmit.nombre,
     'Dirrecion de correo': dataSubmit.mail,
     Telefono: dataSubmit.tel,
-    'Periodo de Alquiler': dataSubmit.tiempoAlquiler
+    'Periodo de Alquiler': dataSubmit.tiempoAlquiler,
+    Estado: 'No Aprobado'
   }
 
   fetch('https://sheet.best/api/sheets/ea36f84a-6a31-42de-b986-1bd637284b67/tabs/Registro', {
