@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { endpointPostSheet } from '../Logic/endpointPostSheet'
-import { endpointReserve } from '../Logic/endpointReserve'
+import { sendMail } from '../Logic/sendMail.js'
 
 export function useForm ({ priceWeek, onClose }) {
   const [branch, setBranch] = useState('')
@@ -28,13 +27,12 @@ export function useForm ({ priceWeek, onClose }) {
     const dataSubmit = {
       nombreSucursal: form.get('Sucursal'),
       nombre: form.get('NombreCompleto'),
-      mail: form.get('DirrecionDecorreo'),
+      mail: form.get('DirrecionDeCorreo'),
       tel: form.get('Telefono'),
       tiempoAlquiler: form.get('TiempoDealquiler')
     }
 
-    endpointReserve()
-    endpointPostSheet(dataSubmit)
+    sendMail(dataSubmit)
     onClose()
   }
 

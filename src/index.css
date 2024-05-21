@@ -74,7 +74,7 @@ header{
   gap: 10px;
   height: auto;
   width: 540px;
-  background-image: url(/public/fondoTazacm.png);
+  background-image: url(/fondoTazacm.png);
   background-size: cover;
   padding: 20px 30px 20px 30px;
 }

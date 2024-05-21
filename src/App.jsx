@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Latte from './components/Latte.jsx'
-import { api } from './Logic/api.js'
+import { getData } from './Logic/getData.js'
 
 export default function App () {
   const [data, setData] = useState([])
@@ -8,7 +8,7 @@ export default function App () {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await api()
+        const result = await getData()
         setData(result)
       } catch (error) {
         console.error('Error fetching data:', error)

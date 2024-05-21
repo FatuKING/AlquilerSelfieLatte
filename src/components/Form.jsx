@@ -16,6 +16,7 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
             </button>
           </div>
           <form onSubmit={handleSumit} className='flex flex-col gap-4'>
+
             <label className='flex flex-col gap-1'>
               <span className='inline-block w-full'>Nombre de sucursal</span>
               <input
@@ -31,6 +32,7 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
               />
               {errorBranch && <p className='text-red-700 text-xs font-semibold'>{errorBranch}</p>}
             </label>
+
             <label className='flex flex-col gap-1'>
               <span className='inline-block w-full'>Nombre completo</span>
               <input
@@ -47,6 +49,7 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
               />
               {errorFullName && <p className='text-red-700 text-xs font-semibold'>{errorFullName}</p>}
             </label>
+
             <label className='flex flex-col gap-1'>
               <span className='inline-block w-full'>Dirreción de correo</span>
               <input
@@ -55,8 +58,8 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
                 className='p-2 pt-4 pb-4 h-6 w-full bg-transparent border focus:outline-none'
                 style={{ borderColor: errorMail ? 'red' : 'white' }}
                 autoComplete='off'
-                type='email'
-                name='DirrecionDecorreo'
+                type='text'
+                name='DirrecionDeCorreo'
                 placeholder='Ej: sucursal@cafemartinez.com.ar'
                 required
               />
@@ -79,6 +82,7 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
               />
               {errorPhone && <p className='text-red-700 text-xs font-semibold'>{errorPhone}</p>}
             </label>
+
             <label className='flex items-center pt-2'>
               <span className='inline-block w-full'>Periodo de alquiler</span>
               <select className='bg-transparent border p-1 focus:outline-none focus:border-2' type='select' name='TiempoDealquiler' defaultValue='Una Semana'>
@@ -88,9 +92,11 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
                 <option className='bg-transparent text-black' value='Un Mes'>4 Semanas - {priceMonth}</option>
               </select>
             </label>
+
             <div className='flex justify-end pt-2'>
               <input className='border w-24 rounded-full active:scale-95' type='submit' value='Enviar' />
             </div>
+
           </form>
         </article>
       </section>

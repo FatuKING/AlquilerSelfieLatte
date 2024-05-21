@@ -1,4 +1,4 @@
-export const api = async () => {
+export const getData = async () => {
   try {
     const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQD5vl8L6uXRG6SqFt09E-R2jHsMlw6cA2HlZUB1SurCwHccvATXErP-aQL6nnRHbV3VY1_rEaUIyYJ/pub?output=tsv')
     const text = await response.text()
