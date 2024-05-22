@@ -22,7 +22,7 @@ export default function App () {
     <>
       <header className='h-auto p-10'>
         <figure className='imgSize'>
-          <img className='w-full h-full aspect-auto' src='/logoMartinez.png' alt='Logo Cafe Martinez' />
+          <img className='w-full h-full aspect-auto' src='/logoMartinez.png' alt='Logo Café Martínez' />
         </figure>
       </header>
       <main className='wrapper'>
