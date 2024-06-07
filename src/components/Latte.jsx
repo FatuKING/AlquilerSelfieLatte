@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Form } from './Form.jsx'
 
-export default function Latte ({ name, img, status, priceWeek, priceMonth, codInt, codOn }) {
+export default function Latte ({ name, img, status, priceWeek, priceMonth, printWeek, printMonth, codInt, codOn }) {
   const [form, setForm] = useState(false)
 
   const handleClick = () => {
@@ -37,7 +37,9 @@ export default function Latte ({ name, img, status, priceWeek, priceMonth, codIn
             <span className='text-black text-sm 2xl:text-lg font-medium'>Cod Interno: {codInt}</span>
             <span className='text-black text-sm 2xl:text-lg font-medium'>Cod Online: {codOn}</span>
             <span className='text-black text-sm 2xl:text-lg font-medium'>Precio por semana: {priceWeek}</span>
+            <span className='text-black text-sm 2xl:text-lg font-medium'>Hasta: {printWeek}</span>
             <span className='text-black text-sm 2xl:text-lg font-medium'>Precio por mes: {priceMonth}</span>
+            <span className='text-black text-sm 2xl:text-lg font-medium'>Hasta: {printMonth}</span>
             <span className='text-black text-sm 2xl:text-lg font-medium'>Estado: <strong className={styleStatus(status)}>{status}</strong></span>
 
             <button className='inline-block text-sm 2xl:text-lg rounded bg-black p-2 w-40 uppercase active:scale-95' onClick={handleClick}>Alquilar</button>

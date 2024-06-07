@@ -29,7 +29,18 @@ export default function App () {
         {
           data.map((selfie, index) => {
             return (
-              <Latte key={index} codInt={selfie.codInt} codOn={selfie.codOn} name={selfie.name} priceWeek={selfie.priceWeek} priceMonth={selfie.priceMonth} img={selfie.img} status={selfie.status} />
+              <Latte
+                key={index}
+                codInt={selfie.codInt}
+                codOn={selfie.codOn}
+                name={selfie.name}
+                priceWeek={selfie.priceWeek}
+                printWeek={selfie.printWeek}
+                img={selfie.img}
+                priceMonth={selfie.priceMonth}
+                printMonth={selfie.printMonth}
+                status={selfie.status}
+              />
             )
           })
         }
