@@ -4,7 +4,7 @@ export const getData = async () => {
     const text = await response.text()
 
     return text.split('\n').slice(1).map(row => {
-      const [codInt, codOn, name, priceWeek, priceMonth, status, img, printWeek, printMonth] = row.split('\t')
+      const [codInt, codOn, name, priceWeek, priceMonth, status, img] = row.split('\t')
 
       return {
         codInt,
@@ -13,8 +13,6 @@ export const getData = async () => {
         priceWeek: priceWeek.trim(),
         priceMonth: priceMonth.trim(),
         status,
-        printWeek,
-        printMonth,
         img
       }
     })
