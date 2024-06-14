@@ -20,12 +20,16 @@ export default function App () {
 
   return (
     <>
-      <header className='h-auto p-10'>
-        <figure className='imgSize'>
-          <img className='w-full h-full aspect-auto' src='/logoMartinez.png' alt='Logo Café Martínez' />
-        </figure>
+      <header className='flex items-center justify-center w-full bg-verde/90 h-16'>
+        <nav className='w-4/5 xl:w-3/4 flex justify-between items-center'>
+          <figure className='w-40'>
+            <img className='w-full h-full' src='/logoMartinez.png' alt='Logo Café Martínez' />
+          </figure>
+
+          <i className='bi bi-list text-5xl' />
+        </nav>
       </header>
-      <main className='wrapper'>
+      <main className='w-4/5 xl:w-3/4 wrapper pt-36 gap-10'>
         {
           data.map((selfie, index) => {
             return (

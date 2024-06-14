@@ -29,7 +29,7 @@ body {
 }
 
 #root {
-  background: url("/fondoverde.png");
+  background-image: url(/public/fondoTazacm.png);
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -46,15 +46,6 @@ header{
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-}
-
-.imgSize{
-  height: 191px;
-  width: 796px;
-}
-
-.large {
-  background-image: url(/fondoMarron.png);
 }
 
 .formBackground {
@@ -81,18 +72,34 @@ header{
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(3, minmax(280px, 480px));
-  gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .tooltip {
-  width: 2px;
-  position: relative
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .tooltip:hover::after {
     content: "Maximo 250 impresiones";
     position: absolute;
+    background: white;
+    color: black;
+    text-align: center;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    width: 180px;
+}
+
+.tooltip2 {
+  position: relative
+}
+
+.tooltip2:hover::after {
+    content: "Maximo 1000 impresiones";
+    position: absolute;
+    top: 100%;
     background: white;
     color: black;
     border-radius: 20px;
