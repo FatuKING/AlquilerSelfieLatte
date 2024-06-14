@@ -101,6 +101,20 @@ header{
   }
  } 
 
+ .tooltip {
+  width: 2px;
+  position: relative
+}
+
+.tooltip:hover::after {
+    content: "Maximo 250 impresiones";
+    position: absolute;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    padding: 2px;
+    width: 180px;
+}
 
 @media (max-width: 1024px) { 
   #root{
