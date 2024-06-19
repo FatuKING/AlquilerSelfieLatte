@@ -34,9 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
-  gap: 50px;
+  height: 100vh;
 }
 
 header{
@@ -70,11 +68,6 @@ header{
   padding: 20px 30px 20px 30px;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .tooltip {
   position: relative;
   display: inline-block;
@@ -84,6 +77,8 @@ header{
 .tooltip:hover::after {
     content: "Maximo 250 impresiones";
     position: absolute;
+    top: 100%;
+    left: 100%;
     background: white;
     color: black;
     text-align: center;
@@ -107,23 +102,7 @@ header{
     width: 180px;
 }
 
-@media (max-width: 1366px) { 
-  #root{
-    height: 100vh;
-    gap: 25px;
-  }
-
-  .imgSize{
-    height: 159px;
-    width: 659px;
-  }
-
-  .wrapper {
-    grid-template-columns: repeat(3, 390px);
-  }
- } 
-
- .tooltip {
+.tooltip {
   width: 2px;
   position: relative
 }
@@ -138,37 +117,65 @@ header{
     width: 180px;
 }
 
+.hamburger {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 8px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 16px;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 @media (max-width: 1024px) { 
   #root{
-    height: 1300px;
+    background-image: none;
+    background-color: aliceblue;
   }
 
   .form {
     width: 480px;
-  }
-
-  .wrapper {
-    grid-template-columns: repeat(1, 480px);
   }
  }
 
 
 @media (max-width: 640px) { 
   #root{
-    height: 1300px;
+    background-image: none;
+    background-color: aliceblue;
   }
-
-  .imgSize{
-    height: 80px;
-    width: 330px;
-  }
-  
 
   .form {
     width: 380px;
-  }
-
-  .wrapper {
-    grid-template-columns: repeat(1, 370px);
   }
  }

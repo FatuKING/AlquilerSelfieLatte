@@ -5,7 +5,7 @@ export function Form ({ onClose, priceWeek, priceMonth }) {
 
   return (
     <>
-      <section className='formBackground'>
+      <section className='formBackground z-10'>
         <article className='form rounded-xl'>
           <div className='flex justify-between'>
             <h1 className='text-2xl'>Formulario de alquiler</h1>
