@@ -30,7 +30,8 @@ body {
 
 #root {
   background-image: url(/public/fondoTazacm.png);
-  background-size: cover;
+  background-size: cover ;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,10 +158,24 @@ header{
   transform: translateY(-8px) rotate(-45deg);
 }
 
+
+@media (max-width: 1280px) { 
+  #root{
+    background-image: none;
+    background-color: aliceblue;
+    height: 1400px;
+  }
+
+  .form {
+    width: 480px;
+  }
+ }
+
 @media (max-width: 1024px) { 
   #root{
     background-image: none;
     background-color: aliceblue;
+    height: 1100px;
   }
 
   .form {
@@ -173,6 +188,7 @@ header{
   #root{
     background-image: none;
     background-color: aliceblue;
+    height: 1000px;
   }
 
   .form {

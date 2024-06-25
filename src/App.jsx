@@ -26,7 +26,7 @@ export default function App () {
   return (
     <>
       <header className='flex items-center justify-center w-full bg-verde h-16'>
-        <nav className='w-11/12 sm:w-2/3 xl:w-4/5 flex justify-between items-center'>
+        <nav className='w-11/12 sm:w-2/3 xl:w-11/12 flex justify-between items-center'>
           <figure className='w-40'>
             <img className='w-full h-full' src='/logoMartinez.png' alt='Logo Café Martínez' />
           </figure>
@@ -39,7 +39,7 @@ export default function App () {
         </nav>
       </header>
 
-      <main className='w-11/12 sm:w-2/3 xl:w-4/5 grid grid-cols-1 xl:grid-cols-3 items-center h-screen md:gap-5'>
+      <main className='w-11/12 sm:w-2/3 xl:w-11/12 grid grid-cols-1 xl:grid-cols-3 items-center h-screen gap-5 pt-10 pb-10'>
         {
           data.map((selfie, index) => {
             return (
